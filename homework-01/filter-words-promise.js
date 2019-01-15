@@ -10,8 +10,6 @@ String.prototype.filterWords = function (words = []) {
     });
 
     return new Promise(function (resolve, reject) {
-
-
         if (modifiedString) {
             resolve(modifiedString);
         } else {
@@ -20,10 +18,16 @@ String.prototype.filterWords = function (words = []) {
     });
 }
 
-"This house is nice!".filterWords(['house', 'nice'])
+let testFilter = function(str="", arr=[]) {
+    str.filterWords(arr)
     .then(function (result) {
         console.log(result);
     })
     .catch(function (error) {
         console.log(error);
     });
+}
+
+testFilter("This house is nice!", ['house', 'nice']);
+console.log("Finish");
+
