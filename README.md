@@ -1,1 +1,1 @@
-CS572 Homeworks
+Homework for Modern Web Applications (CS572) course.
