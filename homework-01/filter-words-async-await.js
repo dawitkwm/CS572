@@ -28,7 +28,7 @@ async function testFilter(str="", arr=[]) {
     } catch (error) {
         console.log(error);
     }
-    console.log("when does this print");
+    console.log("Test: when does this print");
 }
 
 testFilter("This house is nice!", ['house', 'nice']);

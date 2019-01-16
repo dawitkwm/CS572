@@ -13,3 +13,4 @@ String.prototype.filterWords = function(words=[]) {
 }
 
 console.log("This house is nice!".filterWords(['house', 'nice']));
+console.log("Finish");
