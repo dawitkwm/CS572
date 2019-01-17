@@ -1,0 +1,26 @@
+{
+  "name": "mwa",
+  "version": "1.0.0",
+  "description": "MWA Homeworks",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "rxjs": "^6.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawitkwm/CS572.git"
+  },
+  "author": "Dawit K. Weldemariam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dawitkwm/CS572/issues"
+  },
+  "homepage": "https://github.com/dawitkwm/CS572#readme"
+}
