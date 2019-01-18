@@ -1,0 +1,4 @@
+big-file-sync-web-server and big-file-async-web-server use larger 
+memory because they create a buffer size proprotional to the big file to 
+be sent while big-file-stream-web-server uses smaller chunk of memory to
+stream the big file.
