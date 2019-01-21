@@ -1,8 +1,9 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const fs = require('fs')
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+const morganLogger = require('morgan');
 const cors = require('cors');
 
 
@@ -12,6 +13,10 @@ const gradesRouter = require('./routes/grades');
 
 const app = express();
 
+// create a write stream (in append mode)
+const accessLogStream = fs.createWriteStream(path.join(__dirname, '/logs/access.log'), { flags: 'a' })
+
+
 // allow 
 app.use(cors());
 
@@ -19,7 +24,10 @@ app.use(cors());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(logger('dev'));
+// setup the morgan logger
+app.use(morganLogger('dev'));
+app.use(morganLogger('combined', { stream: accessLogStream }))
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
