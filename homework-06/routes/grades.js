@@ -22,21 +22,31 @@ gradesRouter.get('/:id', (req, res, next) => {
 
 /* POST: add a new grade entity.*/
 gradesRouter.post('/', function (req, res, next) {
+  if(!req.body) {
+    res.status(304);
+    res.send("Invalid JSON Input Error.");
+  }
   const postSuccessful = gradesService.add(req.body);
   if(postSuccessful) {
     res.send("Added Successfully.")
   } else {
-    next("POST Error");
+    res.status(304);
+    res.send("POST Error");
   }
 });
 
 /* PUT: update an existing grade entity.*/
 gradesRouter.put('/:id', (req, res, next) => {
+  if(!req.body) {
+    res.status(304);
+    res.send("Invalid JSON Input Error.");
+  }
   const putSuccessful = gradesService.update(req.params.id, req.body);
   if(putSuccessful) {
     res.send("Updated Successfully.");
   } else {
-    next("PUT Error");
+    res.status(304);
+    res.send("PUT Error");
   }
 });
 
@@ -46,7 +56,8 @@ gradesRouter.delete('/:id', (req, res, next) => {
   if(deleteSuccessful) {
     res.send("Deleted Successfully.");
   } else {
-    next("DELETE Error");
+    res.status(304);
+    res.send("DELETE Error");
   }
 });
 

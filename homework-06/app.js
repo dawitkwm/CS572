@@ -28,10 +28,15 @@ app.set('view engine', 'jade');
 app.use(morganLogger('dev'));
 app.use(morganLogger('combined', { stream: accessLogStream }))
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/grades', (req, res, next) => {
+  express.json();
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
