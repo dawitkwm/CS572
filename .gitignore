@@ -3,3 +3,4 @@
 /tests
 /homework-03/*.csv
 */public/views
+*.sh
