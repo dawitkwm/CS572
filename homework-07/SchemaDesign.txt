@@ -1,0 +1,33 @@
+A book has one or more authors. There can be more than one copies of a given book 
+in a library. Each copy of a book will be assigned a unique copy ID to differentiate 
+from other copies of the same book. Some copies of a book might have been borrowed by 
+students while the remaining ones are available for borrowing. A book can tagged by many 
+keywords. 
+
+Assuming that the number of copies of a given book is going to be few, we embed all 
+
+Embedded Book Model:
+
+{
+	ISBN: String,
+	title: String,
+	author: [{
+		honorific: String,
+		firstName: String,
+		lastName: String
+	}],
+	tags: [String],
+	availableCopies: [String],
+	lentCopies: [{
+		copyId: String
+		returnDate: Date,
+		student: {
+			studentId: String,
+			firstName: String,
+			lastName: String,
+			streetAddress: String,
+			emailAddress: String,
+			phone: String
+		}
+	}]
+}
