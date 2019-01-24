@@ -24,11 +24,11 @@ app.use((req, res, next) => {
         location: "2d"
       });
       req.db = db;
-      next();
+      return next();
     });
   } else {
     req.db = db;
-    next();
+    return next();
   }
 });
 
