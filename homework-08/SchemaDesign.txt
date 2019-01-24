@@ -1,0 +1,33 @@
+Book Model
+============
+
+{
+	ISBN: String,
+	title: String,
+	authors: [{
+		honorific: String,
+		firstName: String,
+		lastName: String
+	}],
+	tags: [String],
+	availableCopies: [String],
+	lentCopies: [{
+		copyId: String
+		returnDate: Date,
+		student: {
+			studentId: String,
+			firstName: String,
+			lastName: String,
+			streetAddress: String,
+			emailAddress: String,
+			phone: String
+		}
+	}]
+}
+
+Performance Tuning Using Indexes
+==================================
+Assuming tags will include last names of authors, and keywords in titles of books, indexing on the 
+tags is adequate. 
+
+db.books.createIndex({tags: 1});

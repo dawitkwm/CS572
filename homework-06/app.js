@@ -4,7 +4,6 @@ const fs = require('fs')
 // const cookieParser = require('cookie-parser');
 const morganLogger = require('morgan');
 const cors = require('cors');
-const createError = require('http-errors');
 
 const indexRouter = require('./routes/index');
 const gradesRouter = require('./routes/grades');
