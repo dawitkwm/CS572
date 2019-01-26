@@ -44,7 +44,7 @@ console.log("start");
     .then((result) => {
         console.log(result);
     }).catch((err) => {
-        console.log(error);
+        console.log(err);
     });
 
 console.log("end");
