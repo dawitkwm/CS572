@@ -4,20 +4,18 @@ import { RouterModule } from '@angular/router';
 
 import { UsersComponent } from './users.component';
 import { UserDetailsComponent } from './user-details.component';
-import {ErrorComponent} from './error.component';
 import {UserGuard} from './user-guard.service';
 
 @NgModule({
-  declarations: [UsersComponent, UserDetailsComponent, ErrorComponent],
+  declarations: [UsersComponent, UserDetailsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {path: '', component: UsersComponent},
-      {path: ':id', component: UserDetailsComponent, canActivate: [UserGuard]},
-      {path: 'error', component: ErrorComponent},
+      {path: ':id', component: UserDetailsComponent, canActivate: [UserGuard]}
     ])
   ],
-  exports: [UsersComponent, UserDetailsComponent, ErrorComponent, RouterModule],
+  exports: [UsersComponent, UserDetailsComponent, RouterModule],
   providers: [UserGuard],
 })
 export class UsersModule { }
